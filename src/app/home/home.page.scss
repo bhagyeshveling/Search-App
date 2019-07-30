@@ -1,1 +1,44 @@
 
+.titleColor {
+    color: green;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+.dataColor {
+    color:#4817e8;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+
+ion-card {
+    border:2px solid #f39c12;
+    width: 90%;
+} 
+
+.form-control {
+    margin-left: 42%;
+    border-top: 0px hidden;
+    border-right: 0px hidden;
+    border-bottom: 1px ridge black;
+    border-left: 0px hidden;
+    text-decoration: none;
+    border-color:dodgerblue
+}
+
+ion-icon {
+    margin-left: -16px;
+}
+
+.form-control::placeholder {
+    font-size: 14px;
+}
+
+.error1-message {
+    text-align: center;
+}
+
+.error2-message {
+    text-align: center;
+}

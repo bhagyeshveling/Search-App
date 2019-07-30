@@ -1,14 +1,50 @@
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title color="primary">
+      GitSearch 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding color="light">
+  <input class="form-control" type="search" color="primary" 
+  (keyup.enter)="getRepos(userid)" #userid placeholder="Search UserId">
+    <ion-icon name="search"></ion-icon>
+    <ion-text color="danger" class="error1-message" *ngIf="posts == 404">
+      <p>Please enter a valid user id!</p>
+    </ion-text>
+    <ion-text color="danger" class="error2-message" *ngIf="posts == 0">
+      <p>No repository for this user id!</p>
+    </ion-text> 
+    <ul style="list-style-type:none;">
+     <li *ngFor="let repos of posts">
+       <div *ngIf="(posts != 404) && (posts != 0)">
+        <ion-card color="light" class="showDetails">
+            <div class="titleColor">
+              <p>Repository Name:</p>
+            </div>
+            <div class="dataColor">
+              <p>{{repos.name}}</p>
+            </div>
+            <br>
+            <div class="titleColor">
+              <p>Repository Description:</p>
+            </div>
+            <div class="dataColor">
+              <p>{{repos.description}}</p>
+            </div>
+            <br>
+            <div class="titleColor">
+              <p>Repository Last Updated:</p>
+            </div>
+            <div class="dataColor">
+              <p>{{repos.updated_at}}</p>
+            </div> 
+        </ion-card>
+       </div>
+        <br/>
+     </li>
+   </ul>
 </ion-content>
+
